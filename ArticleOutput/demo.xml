@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FounderEnpML>
+    <!-- =================================================================== -->
+    <!-- 版本信息                                                             -->
+    <!-- =================================================================== -->
+    <version>4.0.0.1</version>
+    <package/>
+ 
+    <!-- =================================================================== -->
+    <!-- 稿件信息                                                             -->
+    <!-- =================================================================== -->
+    <article>
+        <!-- 翔宇系统中稿件唯一ID -->
+        <articleId><![CDATA[]]></articleId>
+
+        <!-- 这是引题，没有可以为空 -->
+        <introTitle><![CDATA[]]></introTitle>
+
+        <!-- 这是副题，没有可以为空 -->
+        <subTitle><![CDATA[]]></subTitle>
+
+        <!-- 这是摘要，没有可以为空 -->
+        <articleAbstract><![CDATA[]]></articleAbstract>
+
+        <!-- 这是稿件属性，普通稿件/头条新闻/图片新闻 -->
+        <attrDesc><![CDATA[31]]></attrDesc>
+
+        <!-- 这是稿件字数 -->
+        <wordCount><![CDATA[]]></wordCount>
+
+        <!-- 稿件优先级 -->
+        <importance><![CDATA[]]></importance>
+
+        <!-- 关键字 -->
+        <keyword><![CDATA[]]></keyword>
+
+        <!-- 这是图片数 -->
+        <picCount><![CDATA[]]></picCount>
+
+        <!-- 这是稿件日期，使用网站新闻的更新日期，格式如：2006-07-08 12:34:56 -->
+        <nsdate><![CDATA[]]></nsdate>
+
+        <!-- 这是来源,多个来源用半角分号隔开，如果没有可以不填 -->
+        <source><![CDATA[]]></source>
+
+        <!-- 这是作者 -->
+        <author><![CDATA[]]></author>
+
+        <!-- 这是标题 -->
+        <title><![CDATA[]]></title>
+
+        <!-- 这稿件所在栏目ID,栏目包含稿件所在栏目及该栏目所有上级栏目,上级栏目在前,下级栏目在后,栏目之间以"~"隔开 -->
+        <nodeNamePath><![CDATA[]]></nodeNamePath>
+
+        <!-- 稿件内容的url，对于抓取稿件该置标固定为空 -->
+        <url><![CDATA[]]></url>
+
+        <!-- 这是正文,必填项 -->
+        <content><![CDATA[]]></content>
+
+        <!-- 过期日期，对于抓取稿件该置标固定为空 -->
+        <expirationTime><![CDATA[]]></expirationTime>
+
+        <!-- =================================================================== -->
+        <!-- 稿件附件信息                                                         -->
+        <!-- =================================================================== -->
+        <attachement>
+            <!-- 附件文件，允许有多个。type：文件类型，使用文件扩展名；length：文件大小，使用字节量表示 -->
+            <file>
+                <filename>aa.jpg</filename>
+                <type>jpg</type>
+                <!-- 内容，使用base64编码的文件内容 -->
+                <filecode><![CDATA[]]></filecode>
+            </file>
+        </attachement>
+    </Article>
+</FounderEnpML>

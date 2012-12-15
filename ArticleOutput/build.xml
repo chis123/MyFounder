@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    "Founder CMS System v4.0" Ant build script.
+    Author: Liudong
+    Date:   2006-5-12
+-->
+<project name="cms4" default="release" basedir=".">
+
+  <!-- =================================================================== -->
+  <!-- Initialization target                                               -->
+  <!-- =================================================================== -->
+  <target name="init">
+    <tstamp/>
+    <buildnumber/>
+
+    <property file="build.properties"/>
+
+    <echo message="${NAME}"/>
+    <echo message="----------- ${name} ${version} [${year}] ------------"/>
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares the build directory                                        -->
+  <!-- =================================================================== -->
+  <target name="prepare" depends="init">
+    <!-- first delete temp dir and old release dir -->
+    <delete dir="${dest.dir}"/>
+    <!-- create all temp dir -->
+    <mkdir dir="${classes.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the source directory                                       -->
+  <!-- =================================================================== -->
+  <target name="compile" depends="prepare">
+    <javac srcdir="${src.dir}"
+           destdir="${classes.dir}"
+           debug="${debug}"
+           optimize="${optimize}"
+           encoding="${encoding}">
+      <classpath>
+        <fileset dir="${lib.dir}">
+          <include name="**/*.jar"/>
+        </fileset>
+      </classpath>
+    </javac>
+    
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the class package                                           -->
+  <!-- =================================================================== -->
+  <target name="package" depends="compile">
+    <!-- create cms kernel jar -->
+    <jar jarfile="${jar.name}">
+      <fileset dir="${classes.dir}">
+        <include name="**/*.class"/>
+      </fileset>
+      <manifest>
+        <attribute name="Built-By" value="Founder XYZ"/>
+      </manifest>
+    </jar>
+    <copy file="${src.dir}/log4j.properties" tofile="${lib.dir}/log4j.properties" overwrite="true"/>
+  </target>
+
+  
+  
+  <!-- =================================================================== -->
+  <!-- Creates the class package                                           -->
+  <!-- =================================================================== -->
+  <target name="release" depends="package">
+    <!-- Give message if all target complete -->
+    <echo message="Build success completed!"/>
+  </target>
+
+
+</project>
+
+
+
+
+
+
+<!-- End of file -->
