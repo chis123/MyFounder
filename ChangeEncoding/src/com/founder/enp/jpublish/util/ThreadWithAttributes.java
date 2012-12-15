@@ -1,0 +1,98 @@
+/*
+ * $Logfile: /chinadaily/enp/src/com/founder/enp/jpublish/util/ThreadWithAttributes.java $
+ * $Revision: 5 $
+ * $Date: 06-07-21 22:14 $
+ * $Author: Liu_dong $
+ * $History: ThreadWithAttributes.java $
+ * 
+ * *****************  Version 5  *****************
+ * User: Liu_dong     Date: 06-07-21   Time: 22:14
+ * Updated in $/chinadaily/enp/src/com/founder/enp/jpublish/util
+ *
+ * Copyright (c) 2006,北大方正电子有限公司数字媒体开发部
+ * All rights reserved.
+ */
+package com.founder.enp.jpublish.util;
+
+import java.util.Hashtable;
+
+/** Special thread that allows storing of attributes and notes.
+ *  A guard is used to prevent untrusted code from accessing the
+ *  attributes.
+ *
+ *  This avoids hash lookups and provide something very similar
+ * with ThreadLocal ( but compatible with JDK1.1 and faster on
+ * JDK < 1.4 ).
+ *
+ * The main use is to store 'state' for monitoring ( like "processing
+ * request 'GET /' ").
+ */
+public class ThreadWithAttributes extends Thread {
+
+  private Object control;
+  public static int MAX_NOTES = 16;
+  private Object notes[] = new Object[MAX_NOTES];
+  private Hashtable attributes = new Hashtable();
+  private String currentStage;
+  private Object param;
+
+  private Object thData[];
+
+  public ThreadWithAttributes(Object control, Runnable r) {
+    super(r);
+    this.control = control;
+  }
+
+  public final Object[] getThreadData(Object control) {
+    return thData;
+  }
+
+  public final void setThreadData(Object control, Object thData[]) {
+    this.thData = thData;
+  }
+
+  /** Notes - for attributes that need fast access ( array )
+   * The application is responsible for id management
+   */
+  public final void setNote(Object control, int id, Object value) {
+    if (this.control != control)return;
+    notes[id] = value;
+  }
+
+  /** Information about the curent performed operation
+   */
+  public final String getCurrentStage(Object control) {
+    if (this.control != control)return null;
+    return currentStage;
+  }
+
+  /** Information about the current request ( or the main object
+   * we are processing )
+   */
+  public final Object getParam(Object control) {
+    if (this.control != control)return null;
+    return param;
+  }
+
+  public final void setCurrentStage(Object control, String currentStage) {
+    if (this.control != control)return;
+    this.currentStage = currentStage;
+  }
+
+  public final void setParam(Object control, Object param) {
+    if (this.control != control)return;
+    this.param = param;
+  }
+
+  public final Object getNote(Object control, int id) {
+    if (this.control != control)return null;
+    return notes[id];
+  }
+
+  /** Generic attributes. You'll need a hashtable lookup -
+   * you can use notes for array access.
+   */
+  public final Hashtable getAttributes(Object control) {
+    return attributes;
+  }
+}

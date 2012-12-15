@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK" ?>
+<config>
+  <!-- 输入信息 -->
+  <input>
+    <!-- 输入目录 -->
+    <dir>g:/2007-07</dir>
+    <!-- 输入文件编码 -->
+    <encoding>GBK</encoding>
+    <!-- 要处理的文件扩展名 -->
+    <includeExt>html;htm;xml;shtml</includeExt>
+  </input>
+
+  <!-- 输出目录 -->
+  <output>
+    <!-- 输出目录 -->
+    <dir>g:/out</dir>
+    <!-- 输出文件编码 -->
+    <encoding>UTF-8</encoding>
+  </output>
+
+  <threadCount>10</threadCount>
+
+</config>
