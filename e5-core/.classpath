@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-net-2.2.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/quartz-1.8.5.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/trove-2.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/spring-2.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="D:/projects/javalib/commons-digester-2.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
