@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/Projects/javalib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="var" path="JDK15_JRE_LIB"/>
+	<classpathentry kind="lib" path="E:/Projects/javalib/jaxen-1.1-beta-9.jar"/>
+	<classpathentry kind="lib" path="E:/Projects/javalib/commons-io-1.3.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
